@@ -9,4 +9,4 @@ include '../App/db.php';
 //     die('read orders error!' . mysqli_error($conn, $result));
 // }
 
-$result = Database::join('products', 'categories', 'products.category_id', 'categories.id', 'products.id, products.NAME, products.price, categories.name AS category');
+$result = Database::join('products', 'categories', 'products.category_id', 'categories.id', 'products.id, products.NAME, products.price, categories.name AS category_name');

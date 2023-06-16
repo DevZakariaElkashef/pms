@@ -12,6 +12,7 @@
 //     die('connection error'. mysqli_connect_error($conn));
 // }
 
+
 class Database
 {
     private const DB_HOST = "localhost";
@@ -19,7 +20,7 @@ class Database
     private const DB_PASS = "";
     private const DB_NAME = "pms";
 
-    public $message = '';
+    public $conn = '';
 
     public static function conn() {
         $conn = mysqli_connect(static::DB_HOST, static::DB_USER, static::DB_PASS, static::DB_NAME);
@@ -32,6 +33,8 @@ class Database
 
 
         // convert array to string for table coloums
+        // $key = ['id', 'name']
+        // form $keys => `id`, `name`
         $keysString = '';
         $countKeys = count($keys) -1;
 
@@ -55,6 +58,7 @@ class Database
             $valuesString .= "'{$value}', ";
         }
 
+        
         $query = "INSERT INTO `{$table}` ({$keysString}) VALUES ({$valuesString})";
 
         $result = mysqli_query(static::conn(), $query);
@@ -69,6 +73,7 @@ class Database
         $result = mysqli_query(static::conn(), $query);
 
         return $result;
+        
     }
 
 

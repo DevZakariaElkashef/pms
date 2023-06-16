@@ -28,7 +28,7 @@ include '../inc/header.php';
                 <?php while($product = mysqli_fetch_array($result)) : ?>
                   <tr>
                     <td><?= $i++ ?></td>
-                    <td><?= $product['category'] ?></td>
+                    <td><?= $product['category_name'] ?></td>
                     <td><?= $product['NAME'] ?></td>
                     <td><?= $product['price'] ?></td>
                     <td class="d-flex">

@@ -3,6 +3,7 @@
 include '../db.php';
 include '../config.php';
 
+
 if (isset($_POST)) {
 
     // validatin
@@ -10,7 +11,7 @@ if (isset($_POST)) {
     $name = $_POST['name'];
     $id = $_POST['id'];
 
-    // $query = "UPDATE `categories` SET `NAME`='$name' WHERE `id` = $id";
+    // $query = "UPDATE `categories` SET `NAME`='{$name}' WHERE `id` = $id";
 
     // $result = mysqli_query($conn, $query);
 
